@@ -1,6 +1,5 @@
 import random
 
-# 定义全局变量
 suits = ('Hearts', 'Diamonds', 'Clubs', 'Spades')
 ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
 values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7, 'Eight': 8, 'Nine': 9, 'Ten': 10,
@@ -20,7 +19,7 @@ class Card:
 
 class Deck:
     def __init__(self):
-        self.deck = []  # 开始时生成一个空列表
+        self.deck = []  
         for suit in suits:
             for rank in ranks:
                 self.deck.append(Card(suit, rank))
@@ -41,9 +40,9 @@ class Deck:
 
 class Hand:
     def __init__(self):
-        self.cards = []  # 开始时生成一个空列表
-        self.value = 0  # 生成一个值为零的整数
-        self.aces = 0  # 添加一个属性来跟踪有多少个Aces
+        self.cards = []  
+        self.value = 0  
+        self.aces = 0  
 
     def add_card(self, card):
         self.cards.append(card)
@@ -146,7 +145,8 @@ def push(player, dealer):
 
 # Set up the Player's chips
 player_chips = Chips()
-# 游戏逻辑
+
+# Main
 while True:
     # Print an opening statement
     print('Welcome to Blackjack!')
