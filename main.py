@@ -144,6 +144,8 @@ def push(player, dealer):
     print("Dealer and Player tie! It's a push.")
 
 
+# Set up the Player's chips
+player_chips = Chips()
 # 游戏逻辑
 while True:
     # Print an opening statement
@@ -161,8 +163,7 @@ while True:
     dealer_hand.add_card(deck.deal())
     dealer_hand.add_card(deck.deal())
 
-    # Set up the Player's chips
-    player_chips = Chips()
+    
 
     # Prompt the Player for their bet
     take_bet(player_chips)
@@ -208,7 +209,9 @@ while True:
 
     # Inform Player of their chips total
     print("\nPlayer's winnings stand at", player_chips.total)
-
+    if player_chips.total == 0:
+        print('You do not have any chips!')
+        break
     # Ask to play again
     new_game = input("Would you like to play another hand? Enter 'y' or 'n' ")
 
